@@ -1,1 +1,1 @@
-<?php
+<?php $view->extend('layout.html.php') ?>

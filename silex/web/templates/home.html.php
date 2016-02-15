@@ -26,12 +26,16 @@ $slots = $view['slots'];
         </div>
         <div class="col-sm-4">
             <div class="panel panel-default">
-                <div class="panel-body">Lorem ipsum dolor sit amet, facete docendi nec te. Molestiae abhorreant suscipiantur cum in, no per suscipit lobortis consequat. Mei an cibo lorem definitiones. Homero facilisis vel ea, te est liber viris partiendo. An modo praesent consulatu quo.</div>
+                <div class="panel-body">Lorem ipsum dolor sit amet, facete docendi nec te. Molestiae abhorreant
+                    suscipiantur cum in, no per suscipit lobortis consequat. Mei an cibo lorem definitiones. Homero
+                    facilisis vel ea, te est liber viris partiendo. An modo praesent consulatu quo.</div>
             </div>
         </div>
         <div class="col-sm-4">
             <div class="panel panel-default">
-                <div class="panel-body">Lorem ipsum dolor sit amet, facete docendi nec te. Molestiae abhorreant suscipiantur cum in, no per suscipit lobortis consequat. Mei an cibo lorem definitiones. Homero facilisis vel ea, te est liber viris partiendo. An modo praesent consulatu quo.</div>
+                <div class="panel-body">Lorem ipsum dolor sit amet, facete docendi nec te. Molestiae abhorreant
+                    suscipiantur cum in, no per suscipit lobortis consequat. Mei an cibo lorem definitiones. Homero
+                    facilisis vel ea, te est liber viris partiendo. An modo praesent consulatu quo.</div>
             </div>     
         </div>
     </div>
