@@ -3,21 +3,22 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-xs-12">
+        <div class="col-sm-offset-3 col-sm-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">Blog</h3>
                 </div>
                 <lu class="list-group">
-                    <?php foreach ($posts as $entry) { ?>
+                    <?php foreach ($posts as $entry) : ?>
                         <li class="list-group-item">
-
-                            <strong><?= $entry["title"];?></strong>
+                            <a href="blog/<?= $entry['id']; ?>" class="linkBlogEntry">
+                                <?= $entry["title"]; ?>
+                            </a>
                             am <?= $entry["created_at"] ?>
                             von
-                            <br><?= $entry["text"];?>
+                            <br><?= $entry["text"]; ?>
                         </li>
-                    <?php } ?>
+                    <?php endforeach; ?>
                 </lu>
             </div>
         </div>
