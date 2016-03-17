@@ -11,12 +11,12 @@
                 <lu class="list-group">
                     <?php foreach ($posts as $entry) : ?>
                         <li class="list-group-item">
-                            <a href="blog/<?= $entry['id']; ?>" class="linkBlogEntry">
-                                <?= $entry["title"]; ?>
+                            <a href="/blog/<?= $entry['id']; ?>" class="linkBlogEntry">
+                                <?= $entry['title']; ?>
                             </a>
-                            am <?= $entry["created_at"] ?>
+                            am <?= $entry['created_at'] ?>
                             von
-                            <br><?= $entry["text"]; ?>
+                            <br><?= (substr($entry['text'], 0, 10)); ?>...
                         </li>
                     <?php endforeach; ?>
                 </lu>

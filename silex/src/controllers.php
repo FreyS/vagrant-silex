@@ -48,8 +48,13 @@ $app->get('/newblog', function () use ($template) {
     );
 });
 
-$app->match('/newblog', function (Request $request) use ($template, $dbConnection) {
+$app->match('/newblog', function (Request $request) use ($template, $dbConnection, $app) {
     $allCorrect = true;
+
+    if (!$request->isMethod('POST') && !$request->isMethod('GET')) {
+        $app->abort(405);
+    }
+
     if ($request->isMethod('POST')) {
         if ($request->get('title') == Null || $request->get('comment') == Null) {
             $allCorrect = false;
