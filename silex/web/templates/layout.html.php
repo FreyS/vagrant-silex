@@ -4,7 +4,7 @@
 
 <?php //important files get load in like stylsheet from bootstrap, jquery ?>
 <head>
-    <title><?= "$title"?></title>
+    <title><?= "$title" ?></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.min.css">
@@ -25,18 +25,39 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li <?= $active=='home' ? 'class="active"':'' ?>>
+                <li <?= $active == 'home' ? 'class="active"' : '' ?>>
                     <a class="glyphicon glyphicon-adjust" href="/home"> Training</a>
                 </li>
-                <li <?= $active=='blog' ? 'class="active"':'' ?>>
+                <li <?= $active == 'blog' ? 'class="active"' : '' ?>>
                     <a class="glyphicon glyphicon-align-justify" href="/blog"> Pokédex</a>
                 </li>
-                <li <?= $active=='newblog' ? 'class="active"':'' ?>>
+                <li <?= $active == 'newblog' ? 'class="active"' : '' ?>>
                     <a class="glyphicon glyphicon-play-circle" href="/newblog"> NewPokémon</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                        <span class="caret"></span> Trainerpass
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>Trainer Name</li>
+                        <li>
+                            <div class="form-group">
+                                <input type="text" class="form-control">
+                            </div>
+                        </li>
+                        <li>Trainer Passwort</li>
+                        <li>
+                            <div class="form-group">
+                                <input type="text" class="form-control">
+                            </div>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="/home">Stürz dich in das Abenteuer</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>

@@ -29,7 +29,7 @@ $app->get('/welcome-twig/{name}', function ($name) use ($app) {
 $app->get('/home', function () use ($template) {
     return $template->render(
         'home.html.php',
-        array('active' => 'home', 'title' => 'Home')
+        array('active' => 'home', 'title' => 'Training')
     );
 });
 
@@ -40,7 +40,7 @@ $app->get('/blog', function () use ($template, $dbConnection) {
     );
     return $template->render(
         'blog.html.php',
-        array('active' => 'blog', 'title' => 'Blog', 'posts' => $posts)
+        array('active' => 'blog', 'title' => 'Pokédex', 'posts' => $posts)
     );
 });
 
@@ -48,7 +48,7 @@ $app->get('/blog', function () use ($template, $dbConnection) {
 $app->get('/newblog', function () use ($template) {
     return $template->render(
         'newblog.html.php',
-        array('active' => 'newblog', 'title' => 'New Blog Post')
+        array('active' => 'newblog', 'title' => 'Catch em')
     );
 });
 
@@ -102,7 +102,7 @@ $app->get('/blog/{id}', function ($id) use ($app, $template, $dbConnection) {
         'entry.html.php',
         array(
             'active' => 'blog',
-            'title' => 'Entry',
+            'title' => 'Got em',
             'post' => $post)
     );
 });
