@@ -1,4 +1,6 @@
-<?php $view->extend('layout.html.php') ?>
+<?php
+//new blog entry gets writen here
+$view->extend('layout.html.php') ?>
 
 <div class="container">
     <div class="row">
@@ -8,22 +10,24 @@
                     <h3 class="panel-title">Neuer Beitrag</h3>
                 </div>
                 <div class="panel-body">
-                        <div>
-                            <?php
-                                if (isset($allCorrect)&&$allCorrect == false) {
-                                    echo '<div class="alert alert-danger" role="alert">Alles ausfüllen!</div>';
-                                }
-                            ?>
-                        </div>
+                    <div>
+                        <?php if (isset($allCorrect) && $allCorrect == false) : ?>
+                            <div class="alert alert-danger" role="alert">
+                                Pokémon Name und Beschreibung bitte eingeben.
+                            </div>
+                        <?php endif; ?>
+                    </div>
+
                     <form action="/newblog" method="post">
                         <div class="form-group">
-                            <input type="text" name="title" class="form-control" placeholder="Gib einen Titel an">
+                            <input type="text" name="title" class="form-control" placeholder="Pokémon Name">
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" rows="5" name="comment" placeholder="Gib einen Text an"></textarea>
+                            <textarea class="form-control" rows="5" name="comment"
+                                      placeholder="Pokémon Beschreibung"></textarea>
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Absenden</button>
+                            <button type="submit" class="btn btn-primary">Catch 'Em</button>
                         </div>
                     </form>
                 </div>

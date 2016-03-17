@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
  * @var $template Symfony\Component\Templating\DelegatingEngine
  */
 
+//Global variable
 $dbConnection = $app['db'];
 $template = $app['templating'];
 
@@ -24,6 +25,7 @@ $app->get('/welcome-twig/{name}', function ($name) use ($app) {
     );
 });
 
+//Startpage
 $app->get('/home', function () use ($template) {
     return $template->render(
         'home.html.php',
@@ -31,6 +33,7 @@ $app->get('/home', function () use ($template) {
     );
 });
 
+//Show all entries
 $app->get('/blog', function () use ($template, $dbConnection) {
     $posts = $dbConnection->fetchAll(
         'SELECT * FROM blog_post'
@@ -41,6 +44,7 @@ $app->get('/blog', function () use ($template, $dbConnection) {
     );
 });
 
+//add a new blog entry
 $app->get('/newblog', function () use ($template) {
     return $template->render(
         'newblog.html.php',
@@ -48,13 +52,16 @@ $app->get('/newblog', function () use ($template) {
     );
 });
 
+//detecting error at newblog
 $app->match('/newblog', function (Request $request) use ($template, $dbConnection, $app) {
     $allCorrect = true;
 
+    //if the method isn´t post or get it will be return the errorcode 405
     if (!$request->isMethod('POST') && !$request->isMethod('GET')) {
         $app->abort(405);
     }
 
+    //entry is false
     if ($request->isMethod('POST')) {
         if ($request->get('title') == Null || $request->get('comment') == Null) {
             $allCorrect = false;
@@ -62,6 +69,7 @@ $app->match('/newblog', function (Request $request) use ($template, $dbConnectio
     }
     $return_site = 'newblog.html.php';
 
+    //entry is correct
     if ($allCorrect == true && $request->isMethod('POST')) {
 
         $dbConnection->insert(
@@ -83,5 +91,18 @@ $app->match('/newblog', function (Request $request) use ($template, $dbConnectio
             'title' => $request->get('title'),
             'comment' => $request->get('comment')
         )
+    );
+});
+
+//show one blog entry
+$app->get('/blog/{id}', function ($id) use ($app, $template, $dbConnection) {
+    $post = $dbConnection->fetchAssoc("SELECT * FROM blog_post WHERE id=?", array($id));
+
+    return $template->render(
+        'entry.html.php',
+        array(
+            'active' => 'blog',
+            'title' => 'Entry',
+            'post' => $post)
     );
 });

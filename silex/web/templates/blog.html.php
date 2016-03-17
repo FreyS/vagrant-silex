@@ -1,4 +1,6 @@
-<?php $view->extend('layout.html.php') ?>
+<?php
+//all entries will be post here
+$view->extend('layout.html.php') ?>
 
 
 <div class="container">
@@ -6,9 +8,9 @@
         <div class="col-sm-offset-3 col-sm-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Blog</h3>
+                    <h3 class="panel-title">Pokédex</h3>
                 </div>
-                <lu class="list-group">
+                <ul class="list-group">
                     <?php foreach ($posts as $entry) : ?>
                         <li class="list-group-item">
                             <a href="/blog/<?= $entry['id']; ?>" class="linkBlogEntry">
@@ -19,7 +21,7 @@
                             <br><?= (substr($entry['text'], 0, 10)); ?>...
                         </li>
                     <?php endforeach; ?>
-                </lu>
+                </ul>
             </div>
         </div>
     </div>
