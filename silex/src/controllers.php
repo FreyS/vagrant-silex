@@ -53,7 +53,7 @@ $app->get('/newblog', function () use ($template) {
     );
 });
 
-//detecting error at newblog
+//detecting error at newblog and adding the new entry
 $app->match('/newblog', function (Request $request) use ($template, $dbConnection, $app) {
     $allCorrect = true;
 
@@ -107,7 +107,8 @@ $app->get('/blog/{id}', function ($id) use ($app, $template, $dbConnection) {
             'post' => $post)
     );
 });
-/*
+
+/* //this could be the login funktion
 $app->get('/login', function () use ($app) {
     $username = $app['request']->server->get('PHP_AUTH_USER', false);
 
