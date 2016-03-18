@@ -1,6 +1,6 @@
 <?php //the default navbar for every website ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 
 <?php //important files get load in like stylsheet from bootstrap, jquery ?>
 <head>
@@ -37,7 +37,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                         <span class="caret"></span> Trainerpass
                     </button>
@@ -55,7 +55,9 @@
                             </div>
                         </li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="/home">Stürz dich in das Abenteuer</a></li>
+                        <li><a href="/home">
+                                <button class="btn btn-success">Stürz dich in das Abenteuer</button>
+                            </a></li>
                     </ul>
                 </li>
             </ul>
