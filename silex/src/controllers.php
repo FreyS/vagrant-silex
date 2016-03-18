@@ -107,3 +107,27 @@ $app->get('/blog/{id}', function ($id) use ($app, $template, $dbConnection) {
             'post' => $post)
     );
 });
+/*
+$app->register(new Silex\Provider\SessionServiceProvider());
+
+$app->get('/login', function () use ($app) {
+    $username = $app['request']->server->get('PHP_AUTH_USER', false);
+
+    if ('igor' === $username) {
+        $app['session']->set('user', array('username' => $username));
+        return $app->redirect('/account');
+    }
+
+    $response = new Response();
+    $response->headers->set('WWW-Authenticate', sprintf('Basic realm="%s"', 'site_login'));
+    $response->setStatusCode(401, 'Please sign in.');
+    return $response;
+});
+
+$app->get('/account', function () use ($app) {
+    if (null === $user = $app['session']->get('user')) {
+        return $app->redirect('/login');
+    }
+
+    return "Welcome {$user['username']}!";
+});*/
