@@ -1,4 +1,5 @@
-<?php $view->extend('layout.html.php') ?>
+<?php //just a site for the succesfull blogentry
+$view->extend('layout.html.php') ?>
 
 <div class="alert alert-success col-sm-offset-4 col-sm-4" role="alert">
     Pokémon wurde erfolgreich gefangen.

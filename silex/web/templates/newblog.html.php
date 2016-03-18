@@ -7,13 +7,13 @@ $view->extend('layout.html.php') ?>
         <div class="col-xs-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Neuer Beitrag</h3>
+                    <h3 class="panel-title">Ein wildes Pokémon erscheint!</h3>
                 </div>
                 <div class="panel-body">
                     <div>
                         <?php if (isset($allCorrect) && $allCorrect == false) : ?>
                             <div class="alert alert-danger" role="alert">
-                                Pokémon Name und Beschreibung bitte eingeben.
+                                Pokémon Name <strong>und</strong> Beschreibung bitte eingeben.
                             </div>
                         <?php endif; ?>
                     </div>

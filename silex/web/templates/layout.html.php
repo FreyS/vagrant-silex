@@ -1,9 +1,8 @@
-<?php //the default navbar for every website ?>
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<!-- the default navbar for every website -->
 
-<?php //important files get load in like stylsheet from bootstrap, jquery ?>
 <head>
+    <!-- important files get load in like stylsheet from bootstrap, jquery -->
     <title><?= "$title" ?></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,9 +54,9 @@
                             </div>
                         </li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="/home">
-                                <button class="btn btn-success">Stürz dich in das Abenteuer</button>
-                            </a></li>
+                        <li>
+                            <a class="btn btn-success" href="/newblog" role="button">Stürz dich in das Abenteuer</a>
+                        </li>
                     </ul>
                 </li>
             </ul>
@@ -66,10 +65,11 @@
 </nav>
 <?php $view['slots']->output('_content') ?>
 
+<!-- the footer for every side -->
 <footer class="bs-docs-footer">
     <div class="container-fluid">
         <div class="col-sm-offset-4 col-sm-4">
-            <div class="glyphicon glyphicon-copyright-mark"> Coppyright Ash Ketchum</div>
+            <div class="glyphicon glyphicon-copyright-mark"> Copyright Ash Ketchum</div>
         </div>
     </div>
 </footer>

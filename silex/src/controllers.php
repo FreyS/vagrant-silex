@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 $dbConnection = $app['db'];
 $template = $app['templating'];
 
+//not relevant
 $app->get('/welcome/{name}', function ($name) use ($template) {
     return $template->render(
         'hello.html.php',
