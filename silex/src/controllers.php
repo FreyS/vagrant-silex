@@ -108,8 +108,6 @@ $app->get('/blog/{id}', function ($id) use ($app, $template, $dbConnection) {
     );
 });
 /*
-$app->register(new Silex\Provider\SessionServiceProvider());
-
 $app->get('/login', function () use ($app) {
     $username = $app['request']->server->get('PHP_AUTH_USER', false);
 

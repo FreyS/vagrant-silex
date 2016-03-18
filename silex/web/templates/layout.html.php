@@ -50,7 +50,7 @@
                         <li>Trainer Passwort</li>
                         <li>
                             <div class="form-group">
-                                <input type="text" class="form-control">
+                                <input type="password" class="form-control">
                             </div>
                         </li>
                         <li role="separator" class="divider"></li>
